@@ -11,7 +11,7 @@ sufficient for full marks at a 3rd sem level.
 
 ## How every answer is structured
 
-For every concept/question:
+For every question:
 
 1. **Definition** — one or two lines, exam-safe.
 2. **Points** — 5 to 10 easy bullet points explaining it.
@@ -21,9 +21,24 @@ For every concept/question:
 
 ## Contents
 
+### Question-Answer Format (each question exactly as in the IMP PDF, with answer below)
+
+| File | Paper |
+|---|---|
+| [Paper1-Dec2023-Jan2024.md](Module1-Question-Answers/Paper1-Dec2023-Jan2024.md) | BCS306A Dec 2023/Jan 2024 Exam |
+| [Paper2-JunJul2024.md](Module1-Question-Answers/Paper2-JunJul2024.md) | BCS306A June/July 2024 Exam |
+| [Paper3-Dec2024-Jan2025.md](Module1-Question-Answers/Paper3-Dec2024-Jan2025.md) | BCS306A Dec 2024/Jan 2025 Exam |
+| [Paper4-JunJul2025.md](Module1-Question-Answers/Paper4-JunJul2025.md) | BCS306A June/July 2025 Exam |
+| [Paper5-JunJul2025-Makeup.md](Module1-Question-Answers/Paper5-JunJul2025-Makeup.md) | BCS306A June/July 2025 Makeup Exam |
+| [Paper6-Dec2025-Jan2026.md](Module1-Question-Answers/Paper6-Dec2025-Jan2026.md) | BCS306A Dec 2025/Jan 2026 Exam |
+| [Paper7-ModelQuestionPaper.md](Module1-Question-Answers/Paper7-ModelQuestionPaper.md) | BCS306A Model Question Paper (2023-24 CBCS) |
+| [Paper8-UndatedExamPaper.md](Module1-Question-Answers/Paper8-UndatedExamPaper.md) | BCS306A Undated Exam Paper |
+
+### Topic-Organized Format (by concept, with question-mapping index)
+
 | File | Covers |
 |---|---|
-| [01-Two-Paradigms-and-OOP-Principles.md](Module1-OOP-Java-IMP/01-Two-Paradigms-and-OOP-Principles.md) | Procedural vs OOP, Java features, "compile once run anywhere", Abstraction, Encapsulation, Inheritance, Polymorphism |
+| [01-Two-Paradigms-and-OOP-Principles.md](Module1-OOP-Java-IMP/01-Two-Paradigms-and-OOP-Principles.md) | Procedural vs OOP, Java features, Abstraction, Encapsulation, Inheritance, Polymorphism |
 | [02-Lexical-Issues.md](Module1-OOP-Java-IMP/02-Lexical-Issues.md) | Whitespace, Identifiers, Literals, Comments, Separators, Keywords |
 | [03-Data-Types.md](Module1-OOP-Java-IMP/03-Data-Types.md) | Primitive (8 types) + Non-primitive types, default values, literals |
 | [04-Type-Conversion-Casting-Promotion.md](Module1-OOP-Java-IMP/04-Type-Conversion-Casting-Promotion.md) | Widening, Narrowing/Casting, Automatic Type Promotion, Variable Scope |
@@ -33,12 +48,28 @@ For every concept/question:
 | [08-Question-Mapping-Index.md](Module1-OOP-Java-IMP/08-Question-Mapping-Index.md) | Every IMP question mapped to the section/program that answers it |
 | [programs/](Module1-OOP-Java-IMP/programs/) | All standalone runnable `.java` files referenced above |
 
-## Why organized this way
+## Programs
 
-The 8 papers repeat the same ~15 core concepts in different wording (e.g. "matrix
-addition" shows up in 4 different papers). Instead of duplicating the same answer 4
-times, each concept is answered **once, thoroughly**, and `08-Question-Mapping-Index.md`
-tells you exactly which paper/question maps to which file — so you can revise by
-concept instead of by paper.
+All standalone `.java` files are in [Module1-OOP-Java-IMP/programs/](Module1-OOP-Java-IMP/programs/):
+- `ArrayDemo.java` — 1D & 2D array declaration, initialization, traversal
+- `AverageArray.java` — Average of {8, 6, 2, 7}
+- `AverageForEach.java` — Average of {1,2,3,4,5} using for-each
+- `BreakContinueDemo.java` — break and continue jump statements
+- `CelsiusToFahrenheit.java` — Temperature conversion
+- `ControlStatementsDemo.java` — All control statements with examples
+- `DataTypesDemo.java` — All primitive types, defaults, literals
+- `ForEach2DArray.java` — 2D array with for-each loop
+- `ForLoopTrace.java` — For loop output tracing template
+- `IfStatementTypes.java` — All 4 types of if statements
+- `LinearSearch.java` — Linear search with keyboard input
+- `MatrixAddition.java` — 2×2 matrix addition
+- `MatrixAdditionN.java` — Order-N matrix addition
+- `MatrixAdditionCLI.java` — Matrix addition using command line args
+- `PrimeCheck.java` — Prime number check with a method
+- `ShiftAndBitwiseDemo.java` — Bitwise & shift operators (<<, >>, >>>)
+- `SortForLoop.java` — Bubble sort using for loop
+- `TernaryGreatest.java` — Greatest of 3 using ternary operator
+- `TransposeMatrix.java` — Matrix transpose
+- `TypeConversionCasting.java` — Type conversion and casting
 
 More modules will be added here as they're prepared.
