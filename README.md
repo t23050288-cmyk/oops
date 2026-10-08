@@ -21,6 +21,13 @@ For every question:
 
 ## Contents
 
+### College IMP Questions (10 questions from the college sheet)
+
+| File | Covers |
+|---|---|
+| [Module1-College-IMP/Java-Module1-College-IMP.md](Module1-College-IMP/Java-Module1-College-IMP.md) | The 10 college "JAVA – Module 1 QUESTIONS": lexical issues, OOP principles, operators, selection statements, looping statements, for statement + variations, jump statements, type conversion & casting, operator precedence & associativity, primitive data types |
+| [Module1-College-IMP/programs/](Module1-College-IMP/programs/) | 10 runnable `.java` programs, all compiled and run (JDK 17) with outputs shown in the answers |
+
 ### Question-Answer Format (each question exactly as in the IMP PDF, with answer below)
 
 | File | Paper |
