@@ -15,6 +15,20 @@ smallest meaningful units (called **tokens**) that the compiler reads before it
 understands the meaning of the program. A Java program is a collection of
 whitespace, identifiers, literals, comments, separators and keywords.
 
+### Syntax (how each lexical element is written)
+```java
+// single-line comment
+/* multi-line comment */
+/** documentation comment (javadoc) */
+
+dataType identifier = literal;          // declaration = type + identifier + literal
+int count = 100;                        // example
+int a, b, c;                            // comma separator declares many at once
+obj.method(argument);                   // . ( ) separators in a call
+arr[0] = value;                         // [ ] separators for arrays
+if (condition) { statements; }          // { } braces make a block, ; ends a statement
+```
+
 ### The 6 Lexical Elements
 
 #### 1. Whitespace
@@ -99,6 +113,30 @@ Object-Oriented Programming (OOP) is a programming approach that organizes a
 program around **objects** (data + the methods that work on it) instead of
 around functions. Its four principles are **Abstraction, Encapsulation,
 Inheritance and Polymorphism**.
+
+### Syntax (all four principles)
+```java
+// ABSTRACTION
+abstract class Shape { abstract double area(); }     // abstract class + abstract method
+interface Drawable { void draw(); }                  // interface = 100% abstraction
+
+// ENCAPSULATION
+class ClassName {
+    private dataType field;                          // hidden data
+    public dataType getField() { return field; }      // getter
+    public void setField(dataType v) { field = v; }  // setter
+}
+
+// INHERITANCE
+class Subclass extends Superclass { }                // IS-A relationship
+
+// POLYMORPHISM (overloading: same name, different parameter lists)
+int add(int a, int b) { }
+double add(double a, double b) { }
+
+// POLYMORPHISM (overriding: subclass redefines the superclass method)
+@Override returnType methodName(params) { }
+```
 
 ### Two Paradigms (background)
 1. **Process-oriented (procedural):** code acts on data; data is global and
@@ -196,6 +234,19 @@ Rectangle area = 24.0
 An operator is a symbol that performs an operation on one or more operands
 (values/variables) and produces a result.
 
+### Syntax (all 9 operator types)
+```java
+result = a + b;                      // 1. Arithmetic:  + - * / %
+x++;  ++x;  x--;  --x;  y = -x;      // 2. Unary
+boolean ok = (a > b);                // 3. Relational:  == != > < >= <=
+ok = (a > 5 && b < 5);               // 4. Logical:  && || !
+x += 5;                              // 5. Assignment:  = += -= *= /= %=
+r = a & b;  r = a | b;  r = a ^ b;   // 6. Bitwise:  & | ^ ~
+r = a << 2;  r = a >> 2;             // 7. Shift:  << >> >>>
+max = (a > b) ? a : b;               // 8. Ternary:  condition ? val1 : val2
+ok = obj instanceof ClassName;       // 9. instanceof
+```
+
 ### Types of Operators
 
 #### 1. Arithmetic: `+ - * / %`
@@ -276,6 +327,14 @@ s instanceof String: true
 Selection (decision-making) statements choose which block of code to execute
 depending on a condition. Java has two: **`if`** and **`switch`**.
 
+### Syntax (if statement and its 4 types)
+```java
+if (condition) { statements; }                    // (i) simple if
+if (condition) { statements; } else { statements; }          // (ii) if-else
+if (c1) { } else if (c2) { } else { }              // (iii) if-else-if ladder
+if (c1) { if (c2) { } }                            // (iv) nested if
+```
+
 ### A. The `if` statement and its types
 
 #### (i) Simple if
@@ -307,6 +366,8 @@ allowed, unlike C).
 
 ### B. The `switch` statement
 Multi-way branch: compares one expression against several constant `case` values.
+
+**Syntax:**
 ```java
 switch (expression) {
     case value1: statements; break;
@@ -363,7 +424,15 @@ two three          <- fall-through: no break after case 2
 Looping (iteration) statements execute a block of code **repeatedly** as long
 as a condition is true.
 
-### The 4 Loops
+### Syntax (all 4 loops)
+```java
+while (condition) { body; }            // 1. while
+do { body; } while (condition);         // 2. do-while (note the ;)
+for (init; condition; update) { body; }    // 3. for
+for (dataType var : array) { body; }    // 4. for-each
+```
+
+### The 4 Loops (explained)
 
 #### 1. while (entry-controlled)
 Condition checked **before** the body; may run **0 times**.
@@ -515,6 +584,21 @@ a b c <- for-each
 Jump statements transfer control to another part of the program. Java has
 three: **`break`, `continue`, `return`** (Java has no `goto`).
 
+### Syntax
+```java
+break;                    // exit the nearest loop or switch
+break labelName;          // exit the labeled (outer) loop
+
+continue;                 // skip rest of this iteration, go to next one
+continue labelName;       // next iteration of the labeled (outer) loop
+
+return value;             // exit method, give back a value
+return;                   // exit a void method
+
+labelName:                // label written just before its loop
+for (init; cond; update) { ... }
+```
+
 ### 1. break
 1. Immediately **exits** the loop or `switch` it is in.
 2. **Labeled break** `break label;` exits an outer (named) loop.
@@ -571,6 +655,19 @@ public class JumpDemo {
   **automatically** by the compiler.
 - **Type casting:** changing a value from one data type to another
   **manually (explicitly)** by the programmer using `(type)`.
+
+### Syntax
+```java
+// Widening (automatic) conversion: small -> large, no cast needed
+largerType variable = smallerTypeVariable;
+long l = intValue;                  // int -> long -> float -> double
+
+// Narrowing (explicit) casting: large -> small, cast REQUIRED
+smallerType variable = (smallerType) largerTypeValue;
+int i = (int) 9.99;                 // double -> int
+byte b = (byte) 300;                // int -> byte
+char c = (char) 65;                 // int -> char
+```
 
 ### 1. Automatic (Widening) Conversion
 Done automatically when **both** conditions hold: the types are compatible and
@@ -640,6 +737,18 @@ A 65 B
 - **Associativity:** decides the order (left-to-right or right-to-left) when
   operators have the **same precedence**.
 
+### Syntax
+```java
+result = expression;               // evaluation follows the precedence table
+
+(expression)                        // parentheses OVERRIDE precedence: done first
+result = (10 + 5) * 2;              // 30, not 20
+
+a = b = c = value;                  // same precedence -> associativity decides:
+                                     // assignment is right-to-left
+result = 100 / 10 * 2;              // / and * equal -> left-to-right: (100/10)*2 = 20
+```
+
 ### Precedence Table (highest to lowest)
 | Level | Operators | Associativity |
 |---|---|---|
@@ -705,6 +814,24 @@ true
 Primitive data types are the **8 basic built-in types** of Java that store
 simple values **directly** (not as objects). Java is **strongly typed**: every
 variable must be declared with a type.
+
+### Syntax (declaration and initialization)
+```java
+dataType variableName;                 // declaration
+dataType variableName = value;         // declaration + initialization
+
+byte  b = 100;                         // 1 byte integer
+short s = 20000;                       // 2 byte integer
+int   i = 50000;                       // 4 byte integer (default for literals)
+long  l = 15000000000L;                // 8 bytes: L suffix required for big values
+float f = 10.5f;                       // 4 bytes: f suffix required
+double d = 3.14159;                    // 8 bytes: default for decimals
+char  c = 'A';                         // 16-bit Unicode character
+boolean flag = true;                   // true or false only
+
+// wrapper class constants are also useful:
+int max = Integer.MAX_VALUE;           // 2147483647
+```
 
 ### The 8 Primitive Types
 Grouped into four categories:
