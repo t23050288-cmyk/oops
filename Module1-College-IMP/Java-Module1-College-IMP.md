@@ -17,16 +17,7 @@ whitespace, identifiers, literals, comments, separators and keywords.
 
 ### Syntax
 ```java
-// Identifier rule
-identifier = letter | _ | $  followed by  (letter | digit | _ | $)*
-
-// Declaration using identifier + literal
-dataType identifier = literal;
-
-// Comments
-// single-line comment
-/* multi-line comment */
-/** documentation comment */
+dataType identifier = literal;   // declaration: identifier + literal
 ```
 
 ### The 6 Lexical Elements
@@ -98,8 +89,10 @@ public class LexicalDemo {                       // identifier + keywords
     }
 }
 ```
+
 **Output:**
 ```
+
 Ravi 20 A 3.14 true
 31 5 1000000
 ```
@@ -116,33 +109,10 @@ Inheritance and Polymorphism**.
 
 ### Syntax
 ```java
-// Abstraction
-abstract class ClassName {
-    abstract returnType methodName(parameters);
-}
-interface InterfaceName {
-    returnType methodName(parameters);
-}
-
-// Encapsulation
-class ClassName {
-    private dataType variableName;
-    public dataType getVariableName() { return variableName; }
-    public void setVariableName(dataType value) { this.variableName = value; }
-}
-
-// Inheritance
-class SubClass extends SuperClass {
-    // members
-}
-
-// Polymorphism - overloading (same name, different parameters)
-returnType methodName(type1 a) { }
-returnType methodName(type1 a, type2 b) { }
-
-// Polymorphism - overriding (same signature in subclass)
-@Override
-returnType methodName(parameters) { }
+abstract class ClassName { abstract returnType methodName(); }   // abstraction
+class ClassName { private dataType variableName; }   // encapsulation (private data)
+class SubClass extends SuperClass { }   // inheritance
+returnType methodName(parameters) { }   // polymorphism: overloading/overriding
 ```
 
 ### Two Paradigms (background)
@@ -226,8 +196,10 @@ public class OOPPrinciplesDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 Circle area    = 78.53975
 Rectangle area = 24.0
 5 6.0
@@ -243,11 +215,7 @@ An operator is a symbol that performs an operation on one or more operands
 
 ### Syntax
 ```java
-operand1 operator operand2;          // binary operators (+ - * / % == && & << ...)
-operator operand;                    // unary operators (++ -- ! ~ -)
-variable operator= value;            // compound assignment (+= -= *= ...)
-variable = (condition) ? value1 : value2;     // ternary operator
-objectName instanceof ClassName      // instanceof operator
+operand1 operator operand2;   // e.g. result = a + b; or variable = (condition) ? value1 : value2;
 ```
 
 ### Types of Operators
@@ -309,8 +277,10 @@ public class OperatorsDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 a+b=13 a-b=7 a*b=30 a/b=3 a%b=1
 x++=5 x=6 ++x=7 -x=-7
 a>b true, a==b false, a!=b true
@@ -332,40 +302,8 @@ depending on a condition. Java has two: **`if`** and **`switch`**.
 
 ### Syntax
 ```java
-// simple if
-if (condition) {
-    statements;
-}
-
-// if-else
-if (condition) {
-    statements;
-} else {
-    statements;
-}
-
-// if-else-if ladder
-if (condition1) {
-    statements;
-} else if (condition2) {
-    statements;
-} else {
-    statements;
-}
-
-// nested if
-if (condition1) {
-    if (condition2) {
-        statements;
-    }
-}
-
-// switch
-switch (expression) {
-    case value1: statements; break;
-    case value2: statements; break;
-    default: statements;
-}
+if (condition) { statements; } else { statements; }
+switch (expression) { case value1: statements; break; default: statements; }
 ```
 
 ### A. The `if` statement and its types
@@ -394,6 +332,7 @@ An `if` inside another `if`; used when one decision depends on another.
 ```java
 if (c1) { if (c2) { ... } }
 ```
+
 **Points:** the condition must be a `boolean` expression (an `int` is not
 allowed, unlike C).
 
@@ -408,6 +347,7 @@ switch (expression) {
     default: statements;
 }
 ```
+
 **Points:**
 1. Expression can be `byte, short, int, char, String` or `enum`.
 2. `case` values must be constants and unique.
@@ -439,8 +379,10 @@ public class SelectionDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 Pass
 Even
 Grade A
@@ -459,25 +401,10 @@ as a condition is true.
 
 ### Syntax
 ```java
-// while
-while (condition) {
-    statements;
-}
-
-// do-while
-do {
-    statements;
-} while (condition);
-
-// for
-for (initialization; condition; update) {
-    statements;
-}
-
-// for-each
-for (dataType variable : arrayName) {
-    statements;
-}
+while (condition) { statements; }
+do { statements; } while (condition);
+for (initialization; condition; update) { statements; }
+for (dataType variable : arrayName) { statements; }
 ```
 
 ### The 4 Loops (explained)
@@ -535,8 +462,10 @@ public class LoopsDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 while: 1 2 3 4 5
 do-while (runs once even if false): 10
 for: 1 2 3 4 5
@@ -553,24 +482,19 @@ update** in a single line, making it compact for counter-controlled repetition.
 
 ### Syntax
 ```java
-for (initialization; condition; update) {
-    statements;
-}
-
-// for-each variation
-for (dataType variable : arrayName) {
-    statements;
-}
+for (initialization; condition; update) { statements; }
 ```
 
 ### How it works (flow)
 ```
+
 1. initialization   (executed ONCE)
 2. condition?  -- false --> exit loop
         | true
 3. body
 4. update  --> back to step 2
 ```
+
 **Points:**
 1. Initialization runs only once, at the start.
 2. Condition is tested before every iteration.
@@ -615,8 +539,10 @@ public class ForVariations {
     }
 }
 ```
+
 **Output:**
 ```
+
 1 2 3 <- standard
 (0,5) (1,4) (2,3) <- two variables
 1 2 3 <- no init
@@ -639,17 +565,7 @@ three: **`break`, `continue`, `return`** (Java has no `goto`).
 
 ### Syntax
 ```java
-break;                  // exit loop / switch
-break label;            // exit labeled outer loop
-
-continue;               // skip to next iteration
-continue label;         // next iteration of labeled outer loop
-
-return;                 // exit a void method
-return value;           // exit method and give back a value
-
-label:                  // label placed before the loop
-for (initialization; condition; update) { statements; }
+break;   continue;   return value;   // label versions: break label; continue label;
 ```
 
 ### 1. break
@@ -691,8 +607,10 @@ public class JumpDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 1 2 3 <- break
 1 2 4 5 <- continue
 (1,1) (2,1) <- labeled
@@ -711,20 +629,18 @@ public class JumpDemo {
 
 ### Syntax
 ```java
-// Widening (automatic) - no cast needed
-largerType variable = smallerTypeValue;
-
-// Narrowing (explicit casting)
-smallerType variable = (smallerType) largerTypeValue;
+smallerType variable = (smallerType) largerTypeValue;   // casting
 ```
 
 ### 1. Automatic (Widening) Conversion
 Done automatically when **both** conditions hold: the types are compatible and
 the destination is **larger** than the source (no data loss).
 ```
+
 byte -> short -> int -> long -> float -> double
               char -> int
 ```
+
 ```java
 int i = 100;  long l = i;  float f = l;  double d = f;   // all automatic
 ```
@@ -734,6 +650,7 @@ Needed when converting a **larger** type to a **smaller** type; may lose data.
 ```java
 (target-type) value
 ```
+
 1. `double` to `int`: fractional part is **truncated** (not rounded).
    `(int) 9.99` gives `9`.
 2. `int` to `byte`: value is reduced modulo 256.
@@ -766,8 +683,10 @@ public class ConversionDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 100 100 100.0 100.0
 9.99 -> 9
 300 -> 44
@@ -788,11 +707,7 @@ A 65 B
 
 ### Syntax
 ```java
-result = operand1 operator1 operand2 operator2 operand3;   // precedence decides order
-
-result = (operand1 operator1 operand2) operator2 operand3; // () forces order
-
-variable1 = variable2 = value;                             // right-to-left associativity
+result = operand1 operator1 operand2;   // order decided by precedence table
 ```
 
 ### Precedence Table (highest to lowest)
@@ -840,8 +755,10 @@ public class PrecedenceDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 20
 30
 20
@@ -863,18 +780,7 @@ variable must be declared with a type.
 
 ### Syntax
 ```java
-dataType variableName;                  // declaration
-dataType variableName = value;          // declaration + initialization
-
-// 8 primitive types
-byte    variableName = value;
-short   variableName = value;
-int     variableName = value;
-long    variableName = valueL;          // L suffix
-float   variableName = valuef;          // f suffix
-double  variableName = value;
-char    variableName = 'character';
-boolean variableName = true / false;
+dataType variableName = value;   // e.g. long l = valueL; float f = valuef;
 ```
 
 ### The 8 Primitive Types
@@ -921,8 +827,10 @@ public class PrimitiveTypesDemo {
     }
 }
 ```
+
 **Output:**
 ```
+
 byte=100 short=20000 int=50000 long=15000000000
 float=10.5 double=3.14159 char=A boolean=true
 Ranges: byte -128..127, short -32768..32767
