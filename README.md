@@ -21,6 +21,13 @@ For every question:
 
 ## Contents
 
+### Java Assignment 1 (college assignment, 10 questions x 5 marks)
+
+| File | Covers |
+|---|---|
+| [Java-Assignment-1/Java-Assignment-1.md](Java-Assignment-1/Java-Assignment-1.md) | Lexical issues, for loop, type conversion and casting, arrays + matrix addition, constructors, recursion (factorial), access specifiers, call by value/reference, `this`, method overriding |
+| [Java-Assignment-1/programs/](Java-Assignment-1/programs/) | 10 runnable `.java` files, all compiled and run |
+
 ### College IMP Questions (10 questions from the college sheet)
 
 | File | Covers |
